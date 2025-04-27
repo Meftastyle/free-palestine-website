@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000; /* Black background */
+  --foreground: #ffffff; /* White text */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+/* Global body styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes backgroundMove {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: center 20%;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+.animate-backgroundMove {
+  animation: backgroundMove 8s ease-in-out infinite;
+}
